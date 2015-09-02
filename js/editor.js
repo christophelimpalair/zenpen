@@ -80,6 +80,15 @@ ZenPen.editor = (function() {
 
 		optionsBox = textOptions.querySelector( '.options' );
 
+		h1Button = textOptions.querySelector( '.h1' );
+		h1Button.onclick = onH1Click;
+
+		h2Button = textOptions.querySelector( '.h2' );
+		h2Button.onclick = onH2Click;
+
+		h3Button = textOptions.querySelector( '.h3' );
+		h3Button.onclick = onH3Click;
+
 		boldButton = textOptions.querySelector( '.bold' );
 		boldButton.onclick = onBoldClick;
 
@@ -233,6 +242,18 @@ ZenPen.editor = (function() {
 		if ( localStorage[ 'content' ] ) {
 			contentField.innerHTML = localStorage[ 'content' ];
 		}
+	}
+
+	function onH1Click() {
+		document.execCommand( 'formatBlock', false, '<h1>' );
+	}
+
+	function onH2Click() {
+		document.execCommand( 'formatBlock', false, '<h2>' );
+	}
+	
+	function onH3Click() {
+		document.execCommand( 'formatBlock', false, '<h3>' );
 	}
 
 	function onBoldClick() {
